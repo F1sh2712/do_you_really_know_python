@@ -1,0 +1,547 @@
+import socket 
+import sys
+from datetime import datetime
+
+class Proxy:
+    # Define the proxy class with required parameters
+    def __init__(self, port, timeout, max_object_size, max_cache_size):
+        self.port = port
+        self.timeout = timeout
+        self.maxObjectSize = max_object_size
+        self.maxCacheSize = max_cache_size
+        self.cache = {}  # Initialize an empty cache
+        self.zId = "z5648617"
+
+    # Function to run the proxy
+    def runProxy(self):
+        host = "127.0.0.1"
+        # Create a socket
+        socketToClient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        socketToClient.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) # Allow reuse of the address while testing and debugging
+        socketToClient.bind((host, self.port))
+
+        # Listen for the connection
+        socketToClient.listen(5)
+        print(f"Proxy server started on {host}:{self.port}")
+
+        # Listens in a loop - handle multiple connections over time, one at a time
+        while True:
+            try:
+                # Accept a connection
+                clientSocket, clientAddress = socketToClient.accept()
+                clientSocket.settimeout(self.timeout)
+
+                # Test the connection
+                print(f"Received connection from client {clientAddress} at {datetime.now()}")
+
+                # Handle single request-response exchange per connection
+                self.handleRequest(clientSocket, clientAddress)
+                
+            except Exception as e:
+                print(f"Error accepting connection: {e}")
+
+    # Function to handle the request from the client - following task instructions step by step
+    def handleRequest(self, clientSocket, clientAddress):
+        try:
+            print(f"=== Step-by-step request processing for {clientAddress} ===")
+            
+            # STEP 1: Start receiving and parsing the request message
+            print("Step 1: Receiving request data...")
+            requestData = b''
+            
+            # Receive until we get the headers (until double CRLF)
+            while b'\r\n\r\n' not in requestData:
+                chunk = clientSocket.recv(4096)
+                if not chunk:
+                    break
+                requestData += chunk
+            
+            if not requestData:
+                print("No data received. Closing connection.")
+                return
+            
+            # Split headers and any initial body data
+            headerEndIndex = requestData.find(b'\r\n\r\n') + 4
+            headerSection = requestData[:headerEndIndex]
+            initialBodyData = requestData[headerEndIndex:]
+            
+            # Decode headers for parsing
+            headerText = headerSection.decode('utf-8', errors='ignore')
+            lines = headerText.split('\r\n')
+            
+            # STEP 2: Parse the start line to extract method, request target, and protocol version
+            print("Step 2: Parsing start line...")
+            if not lines or not lines[0]:
+                print("Invalid request - no start line")
+                return
+                
+            startLine = lines[0]
+            startLineElements = startLine.split(' ', 2)
+            if len(startLineElements) != 3:
+                print("Invalid start line format")
+                return
+                
+            method = startLineElements[0]
+            requestTarget = startLineElements[1] 
+            protocolVersion = startLineElements[2]
+
+            print(f"  Method: {method}")
+            print(f"  Request Target: {requestTarget}")
+            print(f"  Protocol Version: {protocolVersion}")
+
+            # STEP 3: Parse the absolute-form request target to extract hostname, port, and origin-form path
+            print("Step 3: Parsing absolute-form request target...")
+            if not requestTarget.startswith("http://"):
+                print("Error: Only http:// absolute-form URLs supported")
+                return
+                
+            # Remove http:// prefix
+            target = requestTarget[7:]
+            
+            # Extract hostname, port, and path
+            if '/' in target:
+                hostPort, pathAndQuery = target.split('/', 1)
+                originFormPath = '/' + pathAndQuery
+            else:
+                hostPort = target
+                originFormPath = '/'
+            
+            # Parse hostname and port
+            if ':' in hostPort:
+                hostname, portStr = hostPort.split(':')
+                port = int(portStr)
+            else:
+                hostname = hostPort
+                port = 80  # Default HTTP port
+
+            print(f"  Hostname: {hostname}")
+            print(f"  Port: {port}")
+            print(f"  Origin-form path: {originFormPath}")
+
+            # STEP 4: Read each header field line into a data structure, until encountering empty line
+            print("Step 4: Parsing header fields...")
+            headers = {}
+            
+            for line in lines[1:]:
+                if line.strip() == "":  # Empty line marks end of headers
+                    break
+                if ':' in line:
+                    headerName, headerValue = line.split(":", 1)
+                    headerName = headerName.strip().lower()  # Case-insensitive
+                    headerValue = headerValue.strip()
+                    headers[headerName] = headerValue
+                    print(f"  Header: {headerName} = {headerValue}")
+
+            # STEP 5: Determine whether a message body is expected and read more data if necessary
+            print("Step 5: Determining if message body is expected...")
+            
+            bodyExpected = False
+            bodyData = initialBodyData
+            
+            # Check if body is expected based on method and headers
+            if method in ['POST', 'PUT', 'PATCH']:
+                bodyExpected = True
+                print(f"  Body expected for {method} method")
+            elif method == 'GET':
+                bodyExpected = False
+                print(f"  No body expected for {method} method")
+            elif method == 'HEAD':
+                bodyExpected = False
+                print(f"  No body expected for {method} method")
+            
+            # If body is expected, check Content-Length and read remaining data
+            if bodyExpected and 'content-length' in headers:
+                contentLength = int(headers['content-length'])
+                print(f"  Content-Length: {contentLength} bytes")
+                
+                # Read remaining body data if needed
+                remainingBytes = contentLength - len(bodyData)
+                while remainingBytes > 0:
+                    chunk = clientSocket.recv(min(remainingBytes, 4096))
+                    if not chunk:
+                        break
+                    bodyData += chunk
+                    remainingBytes -= len(chunk)
+                
+                print(f"  Body data received: {len(bodyData)} bytes")
+            else:
+                print("  Message considered complete (no body expected)")
+
+            # Generate transformed request for server
+            transformedRequest = self.generateServerRequest(method, originFormPath, headers, hostname, bodyData)
+            if not transformedRequest:
+                return
+
+            # Send to server and get response
+            serverResponse = self.receiveServerResponse(hostname, port, transformedRequest)
+            if not serverResponse:
+                # Send error response
+                error_response = b"HTTP/1.1 502 Bad Gateway\r\nConnection: close\r\n\r\nBad Gateway"
+                clientSocket.sendall(error_response)
+                print("✗ Sent error response to client")
+                return
+
+            # Generate and send response to client
+            self.generateClientResponse(clientSocket, serverResponse)
+
+        except Exception as e:
+            print(f"Error in handleRequest: {e}")
+        finally:
+            # Close client connection after single request-response exchange
+            try:
+                clientSocket.close()
+                print(f"✓ Closed connection with {clientAddress}")
+                print("=" * 50)
+            except:
+                pass
+
+    # Generate transformed request for server
+    def generateServerRequest(self, method, originFormPath, headers, hostname, bodyData):
+        """Transform the client request for forwarding to server"""
+        try:
+            print("=== Generating Server Request ===")
+            
+            # STEP 6: Transform the message for forwarding
+            print("Step 6: Transforming request for forwarding...")
+            
+            # Transform headers
+            transformedHeaders = headers.copy()
+            
+            # Replace or insert Connection header with "close"
+            transformedHeaders['connection'] = 'close'
+            print("  Set Connection: close")
+            
+            # Remove Proxy-Connection header if present
+            if 'proxy-connection' in transformedHeaders:
+                transformedHeaders.pop('proxy-connection')
+                print("  Removed Proxy-Connection header")
+            
+            # Insert or append Via header with zID
+            via = f"1.1 {self.zId}"
+            if 'via' in transformedHeaders:
+                transformedHeaders['via'] += f", {via}"
+                print(f"  Appended to Via header: {transformedHeaders['via']}")
+            else:
+                transformedHeaders['via'] = via
+                print(f"  Added Via header: {via}")
+            
+            # Set Host header to target hostname
+            transformedHeaders['host'] = hostname
+            print(f"  Set Host: {hostname}")
+
+            # STEP 7: Generate the complete transformed request
+            print("Step 7: Generating transformed request...")
+            
+            # Build request line with origin-form path
+            requestLine = f"{method} {originFormPath} HTTP/1.1\r\n"
+            
+            # Build headers
+            headerLines = ''.join(f"{name}: {value}\r\n" for name, value in transformedHeaders.items())
+            
+            # Combine request line, headers, and body
+            transformedRequest = requestLine + headerLines + "\r\n"
+            if bodyData:
+                transformedRequest += bodyData.decode('utf-8', errors='ignore')
+
+            print("  ✓ Transformed request ready for server")
+            return transformedRequest
+
+        except Exception as e:
+            print(f"Error generating server request: {e}")
+            return None
+
+    # Send request to server and receive complete response
+    def receiveServerResponse(self, hostname, port, transformedRequest):
+        """Send request to server and receive complete response"""
+        socketToServer = None
+        
+        try:
+            print("=== Receiving Server Response ===")
+            print(f"Connecting to {hostname}:{port}")
+            
+            # Create and connect to server
+            socketToServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socketToServer.settimeout(self.timeout)
+            socketToServer.connect((hostname, port))
+
+            # Send transformed request to server
+            socketToServer.sendall(transformedRequest.encode('utf-8'))
+            print(f"✓ Sent request to {hostname}:{port}")
+
+            # Receive complete response
+            response = b''
+            
+            # First receive headers
+            while b'\r\n\r\n' not in response:
+                chunk = socketToServer.recv(1024)
+                if not chunk:
+                    break
+                response += chunk
+            
+            if b'\r\n\r\n' not in response:
+                print("✗ Incomplete response headers")
+                return None
+            
+            # Parse response headers to determine body handling
+            headerEndIndex = response.find(b'\r\n\r\n') + 4
+            headerText = response[:headerEndIndex].decode('utf-8', errors='ignore')
+            bodyData = response[headerEndIndex:]
+            
+            # Parse response headers
+            lines = headerText.split('\r\n')
+            statusLine = lines[0]
+            print(f"Status line: {statusLine}")
+            
+            responseHeaders = {}
+            for line in lines[1:]:
+                if line and ':' in line:
+                    key, value = line.split(':', 1)
+                    responseHeaders[key.strip().lower()] = value.strip()
+            
+            # Handle response body based on Content-Length
+            contentLength = responseHeaders.get('content-length')
+            
+            if contentLength:
+                # Read exact number of body bytes
+                remainingBytes = int(contentLength) - len(bodyData)
+                print(f"Reading response body: {contentLength} bytes")
+                
+                while remainingBytes > 0:
+                    chunk = socketToServer.recv(min(remainingBytes, 4096))
+                    if not chunk:
+                        break
+                    bodyData += chunk
+                    remainingBytes -= len(chunk)
+            else:
+                # Read until connection closes
+                print("Reading response body until connection closes")
+                while True:
+                    chunk = socketToServer.recv(4096)
+                    if not chunk:
+                        break
+                    bodyData += chunk
+            
+            # Return complete response (headers + body)
+            completeResponse = response[:headerEndIndex] + bodyData
+            print(f"✓ Received complete response: {len(completeResponse)} bytes")
+            return completeResponse
+
+        except socket.timeout:
+            print(f"✗ Timeout connecting to {hostname}:{port}")
+            return None
+        except Exception as e:
+            print(f"✗ Error receiving server response: {e}")
+            return None
+        finally:
+            # Close server connection
+            if socketToServer:
+                try:
+                    socketToServer.close()
+                    print(f"✓ Closed connection to {hostname}:{port}")
+                except:
+                    pass
+
+    # Generate transformed response and send to client
+    def generateClientResponse(self, clientSocket, serverResponse):
+        """Transform server response and send to client"""
+        try:
+            print("=== Generating Client Response ===")
+            
+            # Parse server response
+            headerEndIndex = serverResponse.find(b'\r\n\r\n') + 4
+            headerSection = serverResponse[:headerEndIndex]
+            bodyData = serverResponse[headerEndIndex:]
+            
+            # Decode and parse headers
+            headerText = headerSection.decode('utf-8', errors='ignore')
+            lines = headerText.split('\r\n')
+            statusLine = lines[0]
+            
+            # Parse response headers
+            responseHeaders = {}
+            for line in lines[1:]:
+                if line and ':' in line:
+                    key, value = line.split(':', 1)
+                    responseHeaders[key.strip().lower()] = value.strip()
+            
+            # Transform response headers - add Via and Connection: close
+            print("Transforming response headers...")
+            responseHeaders['connection'] = 'close'
+            print("  Set Connection: close")
+            
+            via = f"1.1 {self.zId}"
+            if 'via' in responseHeaders:
+                responseHeaders['via'] += f", {via}"
+                print(f"  Appended to Via header: {responseHeaders['via']}")
+            else:
+                responseHeaders['via'] = via
+                print(f"  Added Via header: {via}")
+            
+            # Reconstruct response with transformed headers
+            transformedHeaderText = statusLine + '\r\n'
+            for key, value in responseHeaders.items():
+                transformedHeaderText += f"{key}: {value}\r\n"
+            transformedHeaderText += '\r\n'
+            
+            # Send complete transformed response to client
+            transformedResponse = transformedHeaderText.encode('utf-8') + bodyData
+            clientSocket.sendall(transformedResponse)
+            
+            print(f"✓ Sent transformed response to client: {len(transformedResponse)} bytes")
+
+        except Exception as e:
+            print(f"✗ Error generating client response: {e}")
+
+    # Function to send request to server and return complete response
+    def requestToServer(self, host, port, transformedRequest):
+        socketToServer = None
+        
+        try:
+            # Create and connect to server
+            socketToServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socketToServer.settimeout(self.timeout)
+            
+            print(f"Connecting to {host}:{port}")
+            socketToServer.connect((host, port))
+
+            # Send transformed request to server
+            socketToServer.sendall(transformedRequest.encode('utf-8'))
+            print(f"Sent request to {host}:{port}")
+
+            # Receive complete response
+            response = b''
+            
+            # First receive headers
+            while b'\r\n\r\n' not in response:
+                chunk = socketToServer.recv(1024)
+                if not chunk:
+                    break
+                response += chunk
+            
+            if b'\r\n\r\n' not in response:
+                print("Incomplete response headers")
+                return None
+            
+            # Parse response headers to add Via header
+            headerEndIndex = response.find(b'\r\n\r\n') + 4
+            headerText = response[:headerEndIndex].decode('utf-8', errors='ignore')
+            bodyData = response[headerEndIndex:]
+            
+            # Parse and transform response headers
+            lines = headerText.split('\r\n')
+            statusLine = lines[0]
+            
+            responseHeaders = {}
+            for line in lines[1:]:
+                if line and ':' in line:
+                    key, value = line.split(':', 1)
+                    responseHeaders[key.strip().lower()] = value.strip()
+            
+            # Transform response headers - add Via and Connection: close
+            responseHeaders['connection'] = 'close'
+            via = f"1.1 {self.zId}"
+            if 'via' in responseHeaders:
+                responseHeaders['via'] += f", {via}"
+            else:
+                responseHeaders['via'] = via
+            
+            # Reconstruct response with transformed headers
+            transformedHeaderText = statusLine + '\r\n'
+            for key, value in responseHeaders.items():
+                transformedHeaderText += f"{key}: {value}\r\n"
+            transformedHeaderText += '\r\n'
+            
+            # Handle response body based on Content-Length
+            contentLength = responseHeaders.get('content-length')
+            
+            if contentLength:
+                # Read exact number of body bytes
+                remainingBytes = int(contentLength) - len(bodyData)
+                
+                while remainingBytes > 0:
+                    chunk = socketToServer.recv(min(remainingBytes, 4096))
+                    if not chunk:
+                        break
+                    bodyData += chunk
+                    remainingBytes -= len(chunk)
+            else:
+                # Read until connection closes
+                while True:
+                    chunk = socketToServer.recv(4096)
+                    if not chunk:
+                        break
+                    bodyData += chunk
+            
+            # Return complete transformed response
+            return transformedHeaderText.encode('utf-8') + bodyData
+
+        except socket.timeout:
+            print(f"Timeout connecting to {host}:{port}")
+            return None
+        except Exception as e:
+            print(f"Error in requestToServer: {e}")
+            return None
+        finally:
+            # Close server connection
+            if socketToServer:
+                try:
+                    socketToServer.close()
+                    print(f"Closed connection to {host}:{port}")
+                except:
+                    pass
+
+    # Function to generate the log (keeping for future use)
+    def generateLog(self, clientAddress, cacheStatus, request, status, bodySize):
+        # Log format with the following syntax:
+        # host port cache date request status bytes
+        clientIp, clientPort = clientAddress
+        currentTime = datetime.now().astimezone().strftime("[%d/%b/%Y:%H:%M:%S %z]")
+        log = f"{clientIp} {clientPort} {cacheStatus} {currentTime} \"{request}\" {status} {bodySize}\n"
+        print(log)
+      
+def parseCommandLine():
+    # Parse command line arguments
+    if len(sys.argv) != 5:
+        print("Usage: python proxy.py <port> <timeout> <max_object_size> <max_cache_size>")
+        sys.exit(1)
+    
+    try:
+        port = int(sys.argv[1])
+        timeout = int(sys.argv[2])
+        max_object_size = int(sys.argv[3])
+        max_cache_size = int(sys.argv[4])
+
+    except ValueError:
+        print("Error: All arguments must be integers.")
+        sys.exit(1)
+
+    # Validate port number
+    if port < 49152 or port > 65535:
+        print("Warning: Port number between 49152 and 65535 is recommended.")
+        sys.exit(1)
+
+    # Validate size
+    if max_cache_size < max_object_size:
+            print("Warning: max_cache_size must be greater than or equal to max_cache_size.")
+            sys.exit(1)
+
+    return port, timeout, max_object_size, max_cache_size
+
+# Main entrance for command line arguments
+def main():
+    try:
+        # Parse command line
+        port, timeout, max_object_size, max_cache_size = parseCommandLine()
+
+        # Run the proxy
+        proxy = Proxy(port, timeout, max_object_size, max_cache_size)
+        proxy.runProxy()
+
+    # Stop the server using Crtl+C
+    except KeyboardInterrupt:
+        print("\nServer stopped.")
+        sys.exit(0)
+
+# Run main function
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,41 @@
+import numpy as np
+import matplotlib.pyplot as plt
+t_var = np.load("t_var.npy")
+y_var = np.load("y_var.npy")
+p = y_var.size
+# plt.plot(t_var, y_var)
+# plt.show()
+
+def create_W(p):
+   ## generate W which is a p-2 x p matrix as defined in the question
+    W = np.zeros((p-2, p))
+    b = np.array([1, -2, 1])
+    for i in range(p-2):
+        W[i, i:i+3] = b 
+    return W 
+
+W = create_W(p)
+
+# Defined given values
+lambda_1b = 0.9
+matrix = np.identity(p) + 2 * lambda_1b * p * (W.T @ W) # Got from deduction
+beta_hat = np.linalg.solve(matrix, y_var) # Solve liner matrix equation ax = b
+
+def loss(beta, y, W, L):
+    ## compute loss for a given vector beta for data y, matrix W, 
+    # regularization parameter L (lambda)
+    # your code here
+    residual = y - beta
+    loss_val = 0.5/p * (residual @ residual) + L * np.linalg.norm(W @ beta) ** 2
+    return loss_val
+
+# Calculate L(beta_hat)
+L_beta_hat = loss(beta_hat, y_var, W, lambda_1b)
+
+## your code here 
+plt.plot(t_var, y_var, zorder=1, color='red', label='truth')
+plt.plot(t_var, beta_hat, zorder=3, color='blue', 
+            linewidth=2, linestyle='--', label='fit')
+plt.legend(loc='best')
+plt.title(f"L(beta_hat) = {loss(beta_hat, y_var, W, lambda_1b)}")
+plt.show()

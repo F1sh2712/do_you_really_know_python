@@ -1,0 +1,898 @@
+Enter an integer to pass to the seed() function: 1
+You placed all cards, you won 👍
+
+There are 829 lines of output; what do you want me to do?
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       +1
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       10-20
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       10- -20
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       10---20
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       10 -- 20
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[🂪
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[🂵
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       830
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       -830
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+              -829
+Starting the first round...
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+🂹
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[🃛
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[🂪
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[🂵
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[🃄
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[🂸
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[🃖
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[🃓
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[🃕
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[🂣
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[🃍
+
+Starting a column 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[🃍
+
+
+
+
+
+
+🃁
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[🂷
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[🂧
+
+Starting a row 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[🂧
+					🂲
+
+
+
+
+
+🃁
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[🂧
+					🂲 🂤
+
+
+
+
+
+🃁
+
+Cannot use the top card of the discard pile ☹️
+
+Starting a row 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[🂧
+					🂲 🂤
+					🃒
+
+
+
+
+🃁
+
+Cannot use the top card of the discard pile ☹️
+
+Starting a column 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[🂧
+					🂲 🂤
+					🃒
+
+
+
+
+🃁	🂱
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[🂦
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[🃅
+
+Starting a row 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[🃅
+					🂲 🂤
+					🃒
+					🃂
+
+
+
+🃁	🂱
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[🃅
+					🂲 🂤 🃆
+					🃒
+					🃂
+
+
+
+🃁	🂱
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[🃅
+					🂲 🂤 🃆
+					🃒 🂴
+					🃂
+
+
+
+🃁	🂱
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[🃅
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂
+
+
+
+🃁	🂱
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[🂻
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[🃙
+
+Starting a column 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[🃙
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂
+
+
+
+🃁	🂱	🃑
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[🃎
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[🃈
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[🃗
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[🂭
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[🂾
+
+Starting a column 😊️
+]]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[🂾
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂
+
+
+
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Starting a row 😊️
+]]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[🂾
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂
+					🂢
+
+
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[🃉
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[🂩
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[🂨
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[🃋
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[🃋
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂
+					🂢
+
+		🃃
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[🃋
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂
+					🂢
+		🂥
+		🃃
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[🂮
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[🂮
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂 🃔
+					🂢
+		🂥
+		🃃
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[🂮
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂 🃔 🂶
+					🂢
+		🂥
+		🃃
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[🃚
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[🂽
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[🂽
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂 🃔 🂶
+		🃇			🂢
+		🂥
+		🃃
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[🃞
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[🃞
+					🂲 🂤 🃆 🃘
+					🃒 🂴
+					🃂 🃔 🂶
+		🃇			🂢
+		🂥
+		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[🃞
+					🂲 🂤 🃆 🃘 🃊
+					🃒 🂴
+					🃂 🃔 🂶
+		🃇			🂢
+		🂥
+		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[🃞
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴
+					🃂 🃔 🂶
+		🃇			🂢
+		🂥
+		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[🂺
+
+Cannot use the card drawn from the stack ☹️
+
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[🂫
+
+
+Starting the second round...
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+🂹
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[🃛
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[🂪
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[🂵
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[🂵
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+		🂥
+		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[🂸
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[[🂸
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+		🂥
+		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a row by using the top card of the discard pile 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]]
+[[[🂵
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+		🂥
+		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]
+[[[🂵
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+		🂥
+🃓		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a column by using the top card of the discard pile 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]
+[[🂪
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+🂵		🂥
+🃓		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a row by using the top card of the discard pile 😊️
+]]]]]]]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+🂵		🂥
+🃓		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+🂵		🂥	🃕
+🃓		🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+🂵		🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪 🃍
+					🃂 🃔 🂶
+		🃇			🂢 🃄
+🂵		🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪 🃍
+					🃂 🃔 🂶
+		🃇	🂷		🂢 🃄
+🂵		🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪 🃍
+					🃂 🃔 🂶
+🂧		🃇	🂷		🂢 🃄
+🂵		🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪 🃍
+					🃂 🃔 🂶
+🂧		🃇	🂷		🂢 🃄 🂦
+🂵		🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪 🃍
+					🃂 🃔 🂶
+🂧		🃇	🂷		🂢 🃄 🂦
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]]]
+[[🂻
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]]]
+[[🂻
+					🂲 🂤 🃆 🃘 🃊 🃝
+					🃒 🂴 🃖 🂸 🂪 🃍
+		🃙			🃂 🃔 🂶
+🂧		🃇	🂷		🂢 🃄 🂦
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a column by using the top card of the discard pile 😊️
+]]]]]]]]]]]]]]]
+[🃛
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻			🃒 🂴 🃖 🂸 🂪 🃍
+		🃙			🃂 🃔 🂶
+🂧		🃇	🂷		🂢 🃄 🂦
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]]]]
+[[🃎
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]]]]]]]
+[[🃎
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻			🃒 🂴 🃖 🂸 🂪 🃍
+		🃙			🃂 🃔 🂶
+🂧		🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]]]]
+[[🃎
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻			🃒 🂴 🃖 🂸 🂪 🃍
+		🃙			🃂 🃔 🂶
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]]
+[[[🂭
+
+Cannot use the card drawn from the stack ☹️
+]]]]]]]]]]
+[[[[🂾
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]]
+[[[[🂾
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻			🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙			🃂 🃔 🂶
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]]]
+[[[[🂾
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻			🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]]]]
+[[[[🂾
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻			🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]]
+[[[[🂾
+					🂲 🂤 🃆 🃘 🃊 🃝
+		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]]]]
+[[[[🂾
+		🂮			🂲 🂤 🃆 🃘 🃊 🃝
+		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]]
+[[[[🂾
+		🂮			🂲 🂤 🃆 🃘 🃊 🃝
+		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]]]
+[[[[🂾
+		🂮			🂲 🂤 🃆 🃘 🃊 🃝
+		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+]]
+[[[[🂾
+		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a row by using the card drawn from the stack 😊️
+]
+[[[[🂾
+		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨 🂺
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+Extending a column by using the card drawn from the stack 😊️
+
+[[[[🂾
+		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+🂫		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨 🂺
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a column by using the top card of the discard pile 😊️
+
+[[[🂭
+🂾		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+🂫		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨 🂺
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a row by using the top card of the discard pile 😊️
+
+[[🃎
+🂾		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+🂫		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉		🃙	🂩		🃂 🃔 🂶 🂨 🂺 🂭
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Cannot use the top card of the discard pile ☹️
+
+
+Starting the third round...
+
+Extending a column by using the card drawn from the stack 😊️
+]]
+
+🂾		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+🂫		🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉	🂹	🃙	🂩		🃂 🃔 🂶 🂨 🂺 🂭
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a column by using the card drawn from the stack 😊️
+]
+
+🂾		🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+🂫	🃛	🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉	🂹	🃙	🂩		🃂 🃔 🂶 🂨 🂺 🂭
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Extending a column by using the card drawn from the stack 😊️
+
+
+🂾	🃎	🂮	🃞		🂲 🂤 🃆 🃘 🃊 🃝
+🂫	🃛	🂻	🃋		🃒 🂴 🃖 🂸 🂪 🃍
+🃉	🂹	🃙	🂩		🃂 🃔 🂶 🂨 🂺 🂭
+🂧	🃗	🃇	🂷		🂢 🃄 🂦 🃈 🃚 🂽
+🂵	🃅	🂥	🃕
+🃓	🂣	🃃	🂳
+🃁	🂱	🃑	🂡
+
+Enter: q to quit
+       a last line number (between 1 and 829)
+       a first line number (between -1 and -829)
+       a range of line numbers (of the form m--n with 1 <= m <= n <= 829)
+       q
